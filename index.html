@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<!--
+	Name:		Kirstine B Nielsen
+    ID:			100527988
+    Date:		25.11.2015
+    Version:	2
+-->
+<meta charset="utf-8">
+<title>Hollywood Quiz</title>
+
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+
+<link rel="stylesheet" type="text/css" href="themes/gold6.css">
+<link rel="stylesheet" type="text/css" href="themes/jquery.mobile.icons.min.css">
+
+<script src="jQuery/jquery-1.11.2.min.js"></script>
+<script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+
+<script type="text/javascript" src="js/playing.js"></script>
+<script type="text/javascript" src="js/quit.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+<!--external style sheet-->
+<link rel="stylesheet" type="text/css" href="css/main_style.css">
+
+</head>
+ 
+<body>
+
+<div data-role="page" id="page" data-theme="a">
+    <div data-role="header" data-position="fixed">
+        <h1>Menu</h1>
+    </div>
+    
+        <div data-role="main" class="ui-content">
+            <center>
+            	<!--welcome text as img-->
+            	<img src="images/background_images/welcomeStars.jpg" width="100%" height="auto" alt="welcome img">
+                
+                <!--menu buttons-->
+                <button onClick="startGame();">Start Quiz</button>
+                <button onClick="goToAbout();">About</button>
+                <button onClick="quitApplication();">Quit Application</button> 
+			</center>       
+		</div><!--end content-->
+  
+   <div data-role="footer" data-position="fixed">
+        <h4>Kirstine B. Nielsen 100527988</h4>
+   </div>
+</div>
+    
+    
+<div data-role="page" id="page2">
+    <div data-role="header" data-add-back-btn="true" data-position="fixed">
+        <h1>Hollywood Quiz</h1>
+    </div>
+    
+    <div data-role="main" class="ui-content"><!--start content-->    
+    	<!--paragraph to display question counter-->	
+    	<center><p id="questionNumberOfTotal"></p></center>
+        
+        <!--insert image by js-->
+        <center id="questionImg"></center>        
+       
+        <table width="100%">
+        	<tr>
+            	<td width="50%"><button id="buttonA" onClick="submitAnswer('buttonA');"></button></td>
+            	<td width="50%"><button id="buttonB" onClick="submitAnswer('buttonB');"></button></td>
+            </tr>
+        	<tr>
+            	<td width="50%"><button id="buttonC" onClick="submitAnswer('buttonC');"></button></td>
+            	<td width="50%"><button id="buttonD" onClick="submitAnswer('buttonD');"></button></td>
+            </tr>
+        </table>
+         
+        <br/>
+        <button onClick="quitCurrentGame();">Quit</button>
+        
+    </div><!--end content-->
+    
+    <div data-role="footer" data-position="fixed"> 
+        <h4>Kirstine B. Nielsen 100527988</h4>    
+    </div>
+</div>
+  
+
+<div data-role="page" id="page3">
+    <div data-role="header" data-add-back-btn="true" data-position="fixed">
+         <h1>About</h1>
+    </div>
+    
+    <div data-role="main" class="ui-content">
+        <center>        
+        	<table>
+            	<tr><td><p>The purpose of the quiz is to guess the name of the actors.</p></td></tr>
+            	<tr><td><p>You will be shown 5 images of different actors.</p></td></tr>
+            	<tr><td><p>You have to choose 1 out of the 4 answers below the image.</p></td></tr>
+            	<tr><td><p>When the quiz is over the result will be shown.</p></td></tr>
+            </table>
+            
+            <button onClick="startGame();">Start Quiz</button>
+            <button onClick="goToMenu();">Back to Menu</button>                        
+        </center>
+    </div><!--end content-->
+    
+    <div data-role="footer" data-position="fixed">
+        <h4>Kirstine B. Nielsen 100527988</h4>
+  	</div>
+</div>
+    
+    
+<div data-role="page" id="page4">
+    <div data-role="header" data-add-back-btn="true" data-position="fixed">
+          <h1>Hollywood Quiz</h1>
+    </div>
+    
+    <div data-role="main" class="ui-content">
+    	<center>
+        	<!--paragraph to display result message-->	
+        	<p id="resultMsg"></p>
+        
+            <button onClick="startGame();">Play again</button>
+            <button onClick="goToMenu();">Back to Menu</button>
+        </center> 
+    </div><!--end content-->
+    
+    <div data-role="footer" data-position="fixed">
+        <h4>Kirstine B. Nielsen 100527988</h4>
+  	</div>
+</div>
+
+</body>
+</html>
